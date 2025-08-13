@@ -2,7 +2,7 @@
 
 > **To get started:** Clone this repository:
 > 
->     git clone  https://github.com/alecjacobson/computer-graphics-raster-images.git
+>     git clone git@github.com:dilevin/computer-graphics-raster-images.git
 
 **Do not fork:** Clicking "Fork" will create a _public_ repository. If you'd like to use GitHub while you work on your assignment, then mirror this repo as a new _private_ repository: https://stackoverflow.com/questions/10065526/github-how-to-make-a-fork-of-public-repository-private
 
@@ -18,6 +18,8 @@ you up and running with C++ and the cmake build setup used for our assignments.
 On all platforms, we will assume you have installed cmake and a modern c++
 compiler on Mac OS X[¹](#¹macusers), Linux[²](#²linuxusers), or
 Windows[³](#³windowsusers).
+
+Most our instructions will assume you can use the terminal or command line.
 
 We also assume that you have cloned this repository using the `--recursive`
 flag (if not then issue `git submodule update --init --recursive`). 
@@ -107,7 +109,7 @@ its green value, then its blue value, and then the rgb values of its neighbor to
 the right and so on _across_ the row of pixels, and then moving to the next row
 _down_ the columns of rows.
 
-> Q: Suppose you have a 767\times 772 rgb image stored in an array called `data`. How
+> Q: Suppose you have a 767 × 772 rgb image stored in an array called `data`. How
 > would you access the green value at the pixel on the 36th row and 89th
 > column?
 >
@@ -118,7 +120,7 @@ _down_ the columns of rows.
 Natural images (e.g., photographs) only require color information, but to
 manipulate images it is often useful to also store a value representing how much
 of a pixel is "covered" by the given color. Intuitively this value (called alpha
-or <img src="/tex/c745b9b57c145ec5577b82542b2df546.svg?invert_in_darkmode&sanitize=true" align=middle width=10.57650494999999pt height=14.15524440000002pt/> represents how opaque (the opposite of _transparent_) each pixel is.
+or <img src="/tex/c745b9b57c145ec5577b82542b2df546.svg?invert_in_darkmode&sanitize=true" align=middle width=10.57650494999999pt height=14.15524440000002pt/>) represents how opaque (the opposite of _transparent_) each pixel is.
 When we store rgb + α image as a _4_-channel rgba image. Just like rgb images,
 rgba images are 3D arrays unrolled into a linear array in memory.
 
@@ -167,7 +169,7 @@ with a single color channel per pixel. This information is stored as a seemingly
 1-channel image, but with an understood convention for interpreting each pixel
 as the red, green or blue intensity value given some pattern. The most common is
 the [Bayer pattern](https://en.wikipedia.org/wiki/Bayer_filter).  In this
-assignment, we'll assume the top left pixel is green, its right neighbor is blue
+assignment, we'll assume the _GBRG_ pattern where the top left pixel is green, its right neighbor is blue
 and neighbor below is red, and its
 [kitty-corner](https://en.wiktionary.org/wiki/kitty-corner#Adverb) neighbor is
 also green.
